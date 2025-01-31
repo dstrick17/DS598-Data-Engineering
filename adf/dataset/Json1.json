@@ -1,0 +1,47 @@
+{
+	"name": "Json1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "OpenWeatherAPIService",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"latitude": "42.3601",
+				"longitude": "-71.0589",
+				"appid": "6d3f27172679bc19d6d4c05b39b58d32",
+				"start": "1738349617",
+				"end": "1738349617"
+			}
+		},
+		"parameters": {
+			"lat": {
+				"type": "string",
+				"defaultValue": "42.3601"
+			},
+			"lon": {
+				"type": "string",
+				"defaultValue": "-71.0589"
+			},
+			"start": {
+				"type": "string",
+				"defaultValue": "1704067200"
+			},
+			"end": {
+				"type": "string",
+				"defaultValue": "1735689600"
+			},
+			"appid": {
+				"type": "string",
+				"defaultValue": "6d3f27172679bc19d6d4c05b39b58d32"
+			}
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "data/2.5/air_pollution/history?lat=@{dataset().lat}&lon=@{dataset().lon}&start=@{dataset().start}&end=@{dataset().end}&appid=@{dataset().appid}"
+			}
+		},
+		"schema": {}
+	}
+}
