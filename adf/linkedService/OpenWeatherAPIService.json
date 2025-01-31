@@ -1,6 +1,28 @@
 {
 	"name": "OpenWeatherAPIService",
 	"properties": {
+		"parameters": {
+			"latitude": {
+				"type": "string",
+				"defaultValue": "42.3601"
+			},
+			"longitude": {
+				"type": "string",
+				"defaultValue": "-71.0589"
+			},
+			"appid": {
+				"type": "string",
+				"defaultValue": "6d3f27172679bc19d6d4c05b39b58d32"
+			},
+			"start": {
+				"type": "string",
+				"defaultValue": "1738349617"
+			},
+			"end": {
+				"type": "string",
+				"defaultValue": "1738349617"
+			}
+		},
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
