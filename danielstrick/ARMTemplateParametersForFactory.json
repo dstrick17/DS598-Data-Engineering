@@ -9,7 +9,7 @@
 			"value": ""
 		},
 		"OpenWeatherAPIService_properties_typeProperties_url": {
-			"value": "https://api.openweathermap.org/data/2.5"
+			"value": "https://api.openweathermap.org"
 		}
 	}
 }

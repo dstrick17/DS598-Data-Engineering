@@ -13,7 +13,7 @@
 		},
 		"OpenWeatherAPIService_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://api.openweathermap.org/data/2.5"
+			"defaultValue": "https://api.openweathermap.org"
 		},
 		"containerUri": {
 			"type": "string",
