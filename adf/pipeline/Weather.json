@@ -16,15 +16,27 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "HttpReadSettings",
+							"requestMethod": "GET"
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
 					"enableStaging": false
-				}
+				},
+				"inputs": [
+					{
+						"referenceName": "WeatherJsonSOURCE",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"parameters": {
-			"lat": {
-				"type": "string",
-				"defaultValue": "42.3601"
-			},
 			"lon": {
 				"type": "string",
 				"defaultValue": "-71.0589"
@@ -41,9 +53,9 @@
 				"type": "string",
 				"defaultValue": "6d3f27172679bc19d6d4c05b39b58d32"
 			},
-			"weeksago": {
-				"type": "int",
-				"defaultValue": 52
+			"dataType": {
+				"type": "string",
+				"defaultValue": "52"
 			}
 		},
 		"annotations": []
