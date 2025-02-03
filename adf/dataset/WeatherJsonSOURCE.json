@@ -36,7 +36,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "HttpServerLocation",
-				"relativeUrl": "data/2.5/history/city?lat=@{dataset().lat}&lon=@{dataset().lon}&type=@{dataset().dataType}&start=@{dataset().start}&end=@{dataset().end}&appid=@{dataset().appid}"
+				"relativeUrl": {
+					"value": "data/2.5/history/city?lat=@{dataset().lat}&lon=@{dataset().lon}&type=@{dataset().dataType}&start=@string(ticks(addDays(utcNow(), -7 * item() - 7)) / 10000000)&end=@string(ticks(addDays(utcNow(), -7 * item())) / 10000000)&appid=@{dataset().appid}",
+					"type": "Expression"
+				}
 			}
 		},
 		"schema": {}

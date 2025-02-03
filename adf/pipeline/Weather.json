@@ -34,6 +34,75 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "ForEachHistoricalData",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@range(0, 52)",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Copy Historical Weather Data",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "JsonSource",
+									"storeSettings": {
+										"type": "HttpReadSettings",
+										"requestMethod": "GET"
+									},
+									"formatSettings": {
+										"type": "JsonReadSettings"
+									}
+								},
+								"sink": {
+									"type": "JsonSink",
+									"storeSettings": {
+										"type": "AzureBlobStorageWriteSettings"
+									},
+									"formatSettings": {
+										"type": "JsonWriteSettings"
+									}
+								},
+								"enableStaging": false
+							},
+							"inputs": [
+								{
+									"referenceName": "WeatherJsonSOURCE",
+									"type": "DatasetReference",
+									"parameters": {
+										"lat": "42.3601",
+										"lon": "-71.0589",
+										"start": "1704067200",
+										"end": "1735689600",
+										"appid": "6d3f27172679bc19d6d4c05b39b58d32",
+										"dataType": "dataType"
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "WeatherJsonSINK",
+									"type": "DatasetReference"
+								}
+							]
+						}
+					]
+				}
 			}
 		],
 		"annotations": []
