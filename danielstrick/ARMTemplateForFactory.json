@@ -93,7 +93,7 @@
 												"lat": "42.3601",
 												"lon": "-71.0589",
 												"start": "1704067200",
-												"end": "1735689600",
+												"end": "1704067300",
 												"appid": "6d3f27172679bc19d6d4c05b39b58d32",
 												"dataType": "hour"
 											}
@@ -324,8 +324,7 @@
 						"defaultValue": "6d3f27172679bc19d6d4c05b39b58d32"
 					},
 					"dataType": {
-						"type": "string",
-						"defaultValue": "dataType"
+						"type": "string"
 					}
 				},
 				"annotations": [],
