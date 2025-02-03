@@ -10,7 +10,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@range(0, 52)",
+						"value": "@range(0, 3)",
 						"type": "Expression"
 					},
 					"activities": [
@@ -56,8 +56,8 @@
 									"parameters": {
 										"lat": "42.3601",
 										"lon": "-71.0589",
-										"start": "1704067200",
-										"end": "1704067300",
+										"start": "@string((ticks(addDays(utcNow(), -7 * item() - 7)) - ticks('1970-01-01T00:00:00Z')) / 10000000)",
+										"end": "@string((ticks(addDays(utcNow(), -7 * item())) - ticks('1970-01-01T00:00:00Z')) / 10000000)",
 										"appid": "6d3f27172679bc19d6d4c05b39b58d32",
 										"dataType": "hour"
 									}
