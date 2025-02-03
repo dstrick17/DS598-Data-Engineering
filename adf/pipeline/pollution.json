@@ -1,9 +1,9 @@
 {
-	"name": "pipeline1",
+	"name": "pollution",
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "Pollution Data",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
