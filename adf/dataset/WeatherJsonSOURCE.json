@@ -27,8 +27,7 @@
 				"defaultValue": "6d3f27172679bc19d6d4c05b39b58d32"
 			},
 			"dataType": {
-				"type": "string",
-				"defaultValue": "dataType"
+				"type": "string"
 			}
 		},
 		"annotations": [],
