@@ -19,13 +19,13 @@
 			"type": "string",
 			"defaultValue": "https://api.openweathermap.org"
 		},
-		"WeatherJSONsource_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://history.openweathermap.orgdata/2.5/air_pollution/history?lat=@{dataset().lat}&lon=@{dataset().lon}&start=@{dataset().start}&end=@{dataset().end}&appid=@{dataset().appid}"
-		},
 		"WeatherHttpServer2_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://history.openweathermap.org/"
+		},
+		"WeatherJSONsource_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://history.openweathermap.orgdata/2.5/air_pollution/history?lat=@{dataset().lat}&lon=@{dataset().lon}&start=@{dataset().start}&end=@{dataset().end}&appid=@{dataset().appid}"
 		},
 		"containerUri": {
 			"type": "string",
@@ -63,11 +63,11 @@
 					"OpenWeatherAPIService_properties_typeProperties_url": {
 						"value": "[parameters('OpenWeatherAPIService_properties_typeProperties_url')]"
 					},
-					"WeatherJSONsource_properties_typeProperties_url": {
-						"value": "[parameters('WeatherJSONsource_properties_typeProperties_url')]"
-					},
 					"WeatherHttpServer2_properties_typeProperties_url": {
 						"value": "[parameters('WeatherHttpServer2_properties_typeProperties_url')]"
+					},
+					"WeatherJSONsource_properties_typeProperties_url": {
+						"value": "[parameters('WeatherJSONsource_properties_typeProperties_url')]"
 					}
 				}
 			},

@@ -14,11 +14,11 @@
 		"OpenWeatherAPIService_properties_typeProperties_url": {
 			"value": "https://api.openweathermap.org"
 		},
-		"WeatherJSONsource_properties_typeProperties_url": {
-			"value": "https://history.openweathermap.orgdata/2.5/air_pollution/history?lat=@{dataset().lat}&lon=@{dataset().lon}&start=@{dataset().start}&end=@{dataset().end}&appid=@{dataset().appid}"
-		},
 		"WeatherHttpServer2_properties_typeProperties_url": {
 			"value": "https://history.openweathermap.org/"
+		},
+		"WeatherJSONsource_properties_typeProperties_url": {
+			"value": "https://history.openweathermap.orgdata/2.5/air_pollution/history?lat=@{dataset().lat}&lon=@{dataset().lon}&start=@{dataset().start}&end=@{dataset().end}&appid=@{dataset().appid}"
 		}
 	}
 }
