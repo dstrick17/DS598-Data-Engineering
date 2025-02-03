@@ -61,7 +61,8 @@
 											"type": "Expression"
 										},
 										"appid": "6d3f27172679bc19d6d4c05b39b58d32",
-										"dataType": "hour"
+										"dataType": "hour",
+										"start": "@string(div(sub(ticks(addDays(utcNow(), add(mul(-7, item()), -7))), ticks('1970-01-01T00:00:00Z')), 10000000))"
 									}
 								}
 							],
