@@ -1,0 +1,29 @@
+{
+	"name": "Weather",
+	"properties": {
+		"description": "APIWeather date",
+		"parameters": {
+			"lat": {
+				"type": "string",
+				"defaultValue": "42.3601"
+			},
+			"lon": {
+				"type": "string",
+				"defaultValue": "-71.0589"
+			},
+			"start": {
+				"type": "string",
+				"defaultValue": "1704067200"
+			},
+			"end": {
+				"type": "string",
+				"defaultValue": "1735689600"
+			},
+			"appid": {
+				"type": "string",
+				"defaultValue": "6d3f27172679bc19d6d4c05b39b58d32"
+			}
+		},
+		"annotations": []
+	}
+}

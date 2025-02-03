@@ -1,5 +1,5 @@
 {
-	"name": "Json2",
+	"name": "PollutionJson2SYNC",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "air pollution bolb storage",

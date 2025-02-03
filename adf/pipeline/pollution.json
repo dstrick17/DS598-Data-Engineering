@@ -38,7 +38,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Json1",
+						"referenceName": "PollutionJson1SOURCE",
 						"type": "DatasetReference",
 						"parameters": {
 							"lat": "42.3601",
@@ -51,7 +51,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Json2",
+						"referenceName": "PollutionJson2SYNC",
 						"type": "DatasetReference"
 					}
 				]
