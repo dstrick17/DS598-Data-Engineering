@@ -1,5 +1,5 @@
 {
-	"name": "WeatgerJsonSINK",
+	"name": "WeatherJsonSINK",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "air pollution bolb storage",
