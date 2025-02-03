@@ -46,7 +46,7 @@
 						"userProperties": [],
 						"typeProperties": {
 							"items": {
-								"value": "@range(0, 3)",
+								"value": "@range(0, 52)",
 								"type": "Expression"
 							},
 							"activities": [
