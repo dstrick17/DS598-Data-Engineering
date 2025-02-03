@@ -8,6 +8,9 @@
 		"air pollution bolb storage_connectionString": {
 			"value": ""
 		},
+		"HttpServer1_properties_typeProperties_url": {
+			"value": "https://api.openweathermap.org/data/2.5/weather"
+		},
 		"OpenWeatherAPIService_properties_typeProperties_url": {
 			"value": "https://api.openweathermap.org"
 		},

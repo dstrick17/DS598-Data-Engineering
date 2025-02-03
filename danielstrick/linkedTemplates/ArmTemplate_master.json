@@ -11,6 +11,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'air pollution bolb storage'"
 		},
+		"HttpServer1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://api.openweathermap.org/data/2.5/weather"
+		},
 		"OpenWeatherAPIService_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://api.openweathermap.org"
@@ -44,6 +48,9 @@
 					},
 					"air pollution bolb storage_connectionString": {
 						"value": "[parameters('air pollution bolb storage_connectionString')]"
+					},
+					"HttpServer1_properties_typeProperties_url": {
+						"value": "[parameters('HttpServer1_properties_typeProperties_url')]"
 					},
 					"OpenWeatherAPIService_properties_typeProperties_url": {
 						"value": "[parameters('OpenWeatherAPIService_properties_typeProperties_url')]"
