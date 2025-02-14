@@ -10,8 +10,11 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "@{concat('weather_week_', string(item()), '.json')}",
-				"folderPath": "Bronze",
+				"fileName": {
+					"value": "@{concat('weather_week_', string(item()), '.json')}",
+					"type": "Expression"
+				},
+				"folderPath": "Bronze/historical_weather",
 				"container": "weatherblob"
 			}
 		},
