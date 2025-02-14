@@ -195,7 +195,7 @@
 							"value": "@{concat('weather_week_', string(item()), '.json')}",
 							"type": "Expression"
 						},
-						"folderPath": "Bronze",
+						"folderPath": "Bronze/historical_weather",
 						"container": "weatherblob"
 					}
 				},
