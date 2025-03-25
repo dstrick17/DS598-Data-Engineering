@@ -1,0 +1,29 @@
+{
+	"name": "PreprocessWeatherData",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "WeatherJsonSOURCE",
+						"type": "DatasetReference"
+					},
+					"name": "WeatherDataSourceOutputStream"
+				}
+			],
+			"sinks": [],
+			"transformations": [],
+			"scriptLines": [
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     documentForm: 'documentPerLine',",
+				"     dateFormats: ['MM/dd/yyyy'],",
+				"     timestampFormats: ['MM/dd/yyyy HH:mm:ss'],",
+				"     preferredIntegralType: 'integer',",
+				"     wildcardPaths:['weather_week*']) ~> WeatherDataSourceOutputStream"
+			]
+		}
+	}
+}
