@@ -16,6 +16,15 @@
 			"transformations": [
 				{
 					"name": "weatherflatten1"
+				},
+				{
+					"name": "weatherderivedColumn1"
+				},
+				{
+					"name": "weatherfilter1"
+				},
+				{
+					"name": "derivedColumn1"
 				}
 			],
 			"scriptLines": [
@@ -59,7 +68,16 @@
 				"          wind_speed = list.wind.speed",
 				"     ),",
 				"     skipDuplicateMapInputs: false,",
-				"     skipDuplicateMapOutputs: false) ~> weatherflatten1"
+				"     skipDuplicateMapOutputs: false) ~> weatherflatten1",
+				"weatherflatten1 derive(corrected_timestamp = iif(length(toString(timestamp)) == 10, toInteger(timestamp), toInteger(null())),",
+				"          location = 'Boston') ~> weatherderivedColumn1",
+				"weatherderivedColumn1 filter(!isNull(temp) && !isNull(humidity) && length(toString(corrected_timestamp)) == 10) ~> weatherfilter1",
+				"weatherfilter1 derive(date_time = toTimestamp(toLong(corrected_timestamp) * 1000),",
+				"          id = concat('Boston_', toString(corrected_timestamp)),",
+				"          temp_C = round(temp - 273.15, 2),",
+				"          column3 = ERROR_FUNCTION(''),",
+				"          column2 = ERROR_FUNCTION(''),",
+				"          column1 = ERROR_FUNCTION('')) ~> derivedColumn1"
 			]
 		}
 	}
