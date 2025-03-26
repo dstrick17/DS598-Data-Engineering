@@ -75,9 +75,19 @@
 				"weatherfilter1 derive(date_time = toTimestamp(toLong(corrected_timestamp) * 1000),",
 				"          id = concat('Boston_', toString(corrected_timestamp)),",
 				"          temp_C = round(temp - 273.15, 2),",
-				"          column3 = ERROR_FUNCTION(''),",
-				"          column2 = ERROR_FUNCTION(''),",
-				"          column1 = ERROR_FUNCTION('')) ~> derivedColumn1"
+				"          temp_min_C = round(temp - 273.15, 2),",
+				"          feels_like_C = ERROR_FUNCTION(''),",
+				"          temp_max_C = round(temp - 273.15, 2),",
+				"          feels_like_F = ERROR_FUNCTION(''),",
+				"          temp_min_F = ERROR_FUNCTION(''),",
+				"          temp_max_F = ERROR_FUNCTION(''),",
+				"          lon = ERROR_FUNCTION(''),",
+				"          lat = ERROR_FUNCTION(''),",
+				"          weather_id_value = ERROR_FUNCTION(''),",
+				"          weather_main_value = ERROR_FUNCTION(''),",
+				"          weather_description_value = ERROR_FUNCTION(''),",
+				"          weather_icon_value = ERROR_FUNCTION(''),",
+				"          column3 = ERROR_FUNCTION('')) ~> derivedColumn1"
 			]
 		}
 	}
