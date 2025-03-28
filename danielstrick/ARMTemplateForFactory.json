@@ -826,7 +826,7 @@
 								"referenceName": "PollutionJson2SINK",
 								"type": "DatasetReference"
 							},
-							"name": "WeatherDataSourceOutputStream"
+							"name": "PollutionDataSourceOutputStream"
 						}
 					],
 					"sinks": [
@@ -840,13 +840,13 @@
 					],
 					"transformations": [
 						{
-							"name": "weatherflatten1"
+							"name": "Pollutionflatten1"
 						},
 						{
-							"name": "weatherderivedColumn1"
+							"name": "PollutionderivedColumn1"
 						},
 						{
-							"name": "weatherfilter1"
+							"name": "Pollutionfilter1"
 						},
 						{
 							"name": "derivedColumn1"
@@ -867,8 +867,8 @@
 						"     dateFormats: ['MM/dd/yyyy'],",
 						"     timestampFormats: ['MM/dd/yyyy HH:mm:ss'],",
 						"     preferredIntegralType: 'integer',",
-						"     wildcardPaths:['Bronze/historical_weather/*.json']) ~> WeatherDataSourceOutputStream",
-						"WeatherDataSourceOutputStream foldDown(unroll(list),",
+						"     wildcardPaths:['Bronze/historical_weather/*.json']) ~> PollutionDataSourceOutputStream",
+						"PollutionDataSourceOutputStream foldDown(unroll(list),",
 						"     mapColumn(",
 						"          lon = coord.lon,",
 						"          lat = coord.lat,",
@@ -884,11 +884,11 @@
 						"          timestamp = list.dt",
 						"     ),",
 						"     skipDuplicateMapInputs: false,",
-						"     skipDuplicateMapOutputs: false) ~> weatherflatten1",
-						"weatherflatten1 derive(corrected_timestamp = iif(length(toString(timestamp)) == 10, toInteger(timestamp), toInteger(null())),",
-						"          location = 'Boston') ~> weatherderivedColumn1",
-						"weatherderivedColumn1 filter(!isNull(aqi) && !isNull(corrected_timestamp) && length(toString(corrected_timestamp)) == 10) ~> weatherfilter1",
-						"weatherfilter1 derive(date_time = toTimestamp(toLong(corrected_timestamp) * 1000),",
+						"     skipDuplicateMapOutputs: false) ~> Pollutionflatten1",
+						"Pollutionflatten1 derive(corrected_timestamp = iif(length(toString(timestamp)) == 10, toInteger(timestamp), toInteger(null())),",
+						"          location = 'Boston') ~> PollutionderivedColumn1",
+						"PollutionderivedColumn1 filter(!isNull(aqi) && !isNull(corrected_timestamp) && length(toString(corrected_timestamp)) == 10) ~> Pollutionfilter1",
+						"Pollutionfilter1 derive(date_time = toTimestamp(toLong(corrected_timestamp) * 1000),",
 						"          id = concat('Boston_', toString(corrected_timestamp)),",
 						"          co = round(co, 2),",
 						"          no2 = round(no2, 2),",
@@ -958,7 +958,7 @@
 								"type": "DataFlowReference",
 								"parameters": {},
 								"datasetParameters": {
-									"WeatherDataSourceOutputStream": {},
+									"PollutionDataSourceOutputStream": {},
 									"sink1": {}
 								}
 							},
