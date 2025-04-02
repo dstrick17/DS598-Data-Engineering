@@ -5,11 +5,14 @@
 		"factoryName": {
 			"value": "danielstrick"
 		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
 		"air pollution bolb storage_connectionString": {
 			"value": ""
 		},
-		"AzureDataLakeStorage1_accountKey": {
-			"value": ""
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://danielstrickstorage.dfs.core.windows.net/"
 		},
 		"HttpServer1_properties_typeProperties_url": {
 			"value": "https://api.openweathermap.org/data/2.5/weather"
@@ -22,9 +25,6 @@
 		},
 		"WeatherJSONsource_properties_typeProperties_url": {
 			"value": "https://history.openweathermap.orgdata/2.5/air_pollution/history?lat=@{dataset().lat}&lon=@{dataset().lon}&start=@{dataset().start}&end=@{dataset().end}&appid=@{dataset().appid}"
-		},
-		"AzureDataLakeStorage1_properties_typeProperties_url": {
-			"value": "https://danielstrickstorage.dfs.core.windows.net/"
 		}
 	}
 }
