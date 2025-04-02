@@ -50,7 +50,7 @@
 				"     dateFormats: ['MM/dd/yyyy'],",
 				"     timestampFormats: ['MM/dd/yyyy HH:mm:ss'],",
 				"     preferredIntegralType: 'integer',",
-				"     wildcardPaths:['Bronze/historical_weather/*.json']) ~> PollutionDataSourceOutputStream",
+				"     wildcardPaths:['Bronze/historical_weather/*']) ~> PollutionDataSourceOutputStream",
 				"PollutionDataSourceOutputStream foldDown(unroll(list),",
 				"     mapColumn(",
 				"          lon = coord.lon,",
